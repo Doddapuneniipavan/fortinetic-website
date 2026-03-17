@@ -6,44 +6,95 @@
 <title>Fortinetic Solutions</title>
 
 <style>
-body{
+* {
   margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body {
   font-family: 'Segoe UI', sans-serif;
-  color:white;
-  background:#020617;
-  overflow-x:hidden;
+  background: #020617;
+  color: white;
+  overflow-x: hidden;
 }
 
-canvas{
-  position:fixed;
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
   top:0;
-  left:0;
-  z-index:-1;
-}
-
-section{
-  height:100vh;
+  width:100%;
+  padding:20px 50px;
   display:flex;
-  justify-content:center;
+  justify-content:space-between;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.3);
+}
+
+nav a {
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+}
+
+/* SECTIONS */
+section {
+  min-height:100vh;
+  display:flex;
   align-items:center;
+  justify-content:center;
   text-align:center;
-  padding:20px;
+  padding:40px;
 }
 
-h1{
-  font-size:3rem;
+.container {
+  max-width:900px;
 }
 
-p{
-  max-width:700px;
-  color:#94a3b8;
+/* GLASS CARD */
+.card {
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.05);
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.5);
 }
 
-input, select, button{
-  padding:10px;
-  margin:5px;
-  border-radius:5px;
+/* FORM */
+input, select {
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
   border:none;
+  border-radius:8px;
+}
+
+button {
+  width:100%;
+  padding:12px;
+  background:linear-gradient(45deg,#3b82f6,#22c55e);
+  border:none;
+  border-radius:8px;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+h1 {
+  margin-bottom:20px;
+  font-size:2.5rem;
+}
+
+p {
+  color:#94a3b8;
+  margin-bottom:20px;
 }
 </style>
 </head>
@@ -52,50 +103,53 @@ input, select, button{
 
 <canvas id="bg"></canvas>
 
+<!-- NAV -->
+<nav>
+  <div><b>Fortinetic</b></div>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Careers</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
 <!-- HERO -->
 <section>
-  <div>
-    <h1>Fortinetic Solutions</h1>
-    <p>Enterprise Cloud & DevOps Solutions</p>
-    <p>We design scalable, secure, and cost-efficient infrastructure.</p>
+  <div class="container card">
+    <h1>Engineering Scalable Cloud Systems</h1>
+    <p>We help businesses build secure, scalable and cost-efficient infrastructure.</p>
   </div>
 </section>
 
 <!-- SERVICES -->
 <section>
-  <div>
+  <div class="container card">
     <h1>Services</h1>
-    <p>DevOps Automation • Cloud Engineering • Monitoring • Security</p>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section>
-  <div>
-    <h1>Projects</h1>
-    <p>Reduced AWS cost by 40%</p>
-    <p>Built CI/CD pipelines</p>
+    <p>DevOps • Cloud • CI/CD • Monitoring • Security</p>
   </div>
 </section>
 
 <!-- CAREERS -->
 <section>
-  <div>
+  <div class="container card">
+
     <h1>Careers</h1>
+    <p>Join our team and build next-gen infrastructure</p>
 
     <form action="http://localhost:5000/apply" method="POST" enctype="multipart/form-data">
 
-      <input type="text" name="name" placeholder="Your Name" required><br>
+      <input type="text" name="name" placeholder="Your Name" required>
 
-      <input type="email" name="email" placeholder="Email" required><br>
+      <input type="email" name="email" placeholder="Email" required>
 
       <select name="role">
         <option>DevOps Engineer</option>
         <option>Cloud Engineer</option>
         <option>Frontend Developer</option>
-      </select><br>
+      </select>
 
-      <input type="file" name="resume" required><br>
+      <input type="file" name="resume" required>
 
       <button type="submit">Apply Now</button>
 
@@ -106,7 +160,7 @@ input, select, button{
 
 <!-- CONTACT -->
 <section>
-  <div>
+  <div class="container card">
     <h1>Contact</h1>
     <p>info@fortineticsolutions.in</p>
   </div>
@@ -129,12 +183,6 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(window.innerWidth, window.innerHeight);
 
-// LIGHT
-const light = new THREE.PointLight(0xffffff,1);
-light.position.set(20,20,20);
-scene.add(light);
-
-// OBJECT
 const geometry = new THREE.TorusKnotGeometry(10,3,100,16);
 const material = new THREE.MeshStandardMaterial({
   color:0x3b82f6,
@@ -144,13 +192,16 @@ const material = new THREE.MeshStandardMaterial({
 const torus = new THREE.Mesh(geometry, material);
 scene.add(torus);
 
+const light = new THREE.PointLight(0xffffff);
+light.position.set(20,20,20);
+scene.add(light);
+
 camera.position.z = 30;
 
-// ANIMATE
 function animate(){
   requestAnimationFrame(animate);
-  torus.rotation.x += 0.003;
-  torus.rotation.y += 0.003;
+  torus.rotation.x += 0.002;
+  torus.rotation.y += 0.002;
   renderer.render(scene,camera);
 }
 
