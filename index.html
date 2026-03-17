@@ -1,188 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fortinetic Solutions | Cloud & DevOps</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fortinetic Solutions</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
-    body {
-      background: #0b1120;
-      color: #fff;
-      line-height: 1.6;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px 80px;
-      background: rgba(0,0,0,0.4);
-    }
+body{
+  background:#020617;
+  color:white;
+  overflow-x:hidden;
+}
 
-    header h2 {
-      color: #3b82f6;
-    }
+/* PARTICLES BACKGROUND */
+#particles-js{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
 
-    nav a {
-      margin-left: 25px;
-      text-decoration: none;
-      color: #fff;
-    }
+/* NAVBAR */
+header{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 60px;
+}
 
-    .hero {
-      text-align: center;
-      padding: 120px 20px;
-    }
+header h2{
+  color:#3b82f6;
+}
 
-    .hero h1 {
-      font-size: 3rem;
-      color: #3b82f6;
-    }
+nav a{
+  margin-left:25px;
+  text-decoration:none;
+  color:#cbd5f5;
+  transition:0.3s;
+}
 
-    .hero p {
-      margin: 20px 0;
-      font-size: 1.2rem;
-    }
+nav a:hover{
+  color:#3b82f6;
+}
 
-    .btn {
-      padding: 12px 25px;
-      margin: 10px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
+/* HERO */
+.hero{
+  text-align:center;
+  padding:120px 20px;
+}
 
-    .primary {
-      background: #3b82f6;
-      color: #fff;
-    }
+.hero h1{
+  font-size:3.5rem;
+  background: linear-gradient(to right,#3b82f6,#22c55e);
+  -webkit-background-clip:text;
+  color:transparent;
+}
 
-    .secondary {
-      background: transparent;
-      border: 1px solid #3b82f6;
-      color: #3b82f6;
-    }
+.hero p{
+  color:#94a3b8;
+  margin:20px 0;
+}
 
-    section {
-      padding: 80px 20px;
-      text-align: center;
-    }
+.btn{
+  padding:12px 30px;
+  margin:10px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+}
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      padding: 40px;
-    }
+.primary{
+  background: linear-gradient(45deg,#3b82f6,#22c55e);
+}
 
-    .card {
-      background: #111827;
-      padding: 30px;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
+.primary:hover{
+  transform:scale(1.1);
+}
 
-    .card:hover {
-      transform: translateY(-10px);
-    }
+.secondary{
+  border:1px solid #3b82f6;
+  color:#3b82f6;
+  background:transparent;
+}
 
-    .why, .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      padding: 40px;
-    }
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  padding:40px;
+}
 
-    .footer {
-      background: #020617;
-      padding: 40px;
-      text-align: center;
-    }
+/* CARD 3D EFFECT */
+.card{
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  padding:30px;
+  border-radius:15px;
+  transition:0.3s;
+  transform-style: preserve-3d;
+}
 
-    .footer p {
-      margin-top: 10px;
-      font-size: 0.9rem;
-    }
-  </style>
+.card:hover{
+  transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+  box-shadow:0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* SECTIONS */
+section{
+  padding:80px 20px;
+  text-align:center;
+}
+
+.footer{
+  text-align:center;
+  padding:40px;
+  color:#94a3b8;
+}
+</style>
 </head>
 
 <body>
 
+<div id="particles-js"></div>
+
 <header>
-  <h2>Fortinetic</h2>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Services</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </nav>
+<h2>Fortinetic</h2>
+<nav>
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</nav>
 </header>
 
 <section class="hero">
-  <h1>Engineering Scalable Cloud & DevOps Solutions</h1>
-  <p>We help businesses build secure, scalable, and high-performance infrastructure.</p>
-  <button class="btn primary">Get Started</button>
-  <button class="btn secondary">Book Consultation</button>
+<h1>Next-Gen Cloud & DevOps</h1>
+<p>We engineer scalable, secure infrastructure with cutting-edge technology.</p>
+<button class="btn primary">Get Started</button>
+<button class="btn secondary">Contact</button>
 </section>
 
 <section>
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card">
-      <h3>DevOps Automation</h3>
-      <p>CI/CD pipelines, automation workflows, and deployment strategies.</p>
-    </div>
-    <div class="card">
-      <h3>Cloud Infrastructure</h3>
-      <p>Design and deploy scalable AWS, Azure, and GCP solutions.</p>
-    </div>
-    <div class="card">
-      <h3>Monitoring</h3>
-      <p>Prometheus, Grafana, and observability tools for system health.</p>
-    </div>
-    <div class="card">
-      <h3>Security</h3>
-      <p>Secure cloud architecture and compliance-driven solutions.</p>
-    </div>
-  </div>
+<h2>Our Services</h2>
+<div class="grid">
+<div class="card">
+<h3>DevOps</h3>
+<p>Automation & CI/CD pipelines</p>
+</div>
+<div class="card">
+<h3>Cloud</h3>
+<p>AWS, Azure & GCP solutions</p>
+</div>
+<div class="card">
+<h3>Monitoring</h3>
+<p>Observability & metrics</p>
+</div>
+<div class="card">
+<h3>Security</h3>
+<p>Enterprise-grade protection</p>
+</div>
+</div>
 </section>
 
 <section>
-  <h2>Why Choose Us</h2>
-  <div class="why">
-    <div class="card">99.9% Uptime Solutions</div>
-    <div class="card">Cost Optimized Infrastructure</div>
-    <div class="card">Security First Approach</div>
-    <div class="card">Scalable Architecture</div>
-  </div>
-</section>
-
-<section>
-  <h2>Projects</h2>
-  <div class="projects">
-    <div class="card">Reduced AWS cost by 40% for a fintech client</div>
-    <div class="card">Implemented CI/CD for high traffic application</div>
-    <div class="card">Migrated legacy systems to cloud-native architecture</div>
-  </div>
-</section>
-
-<section>
-  <h2>Contact Us</h2>
-  <p>Email: info@fortineticsolutions.in</p>
-  <p>Location: Hyderabad, India</p>
+<h2>Why Choose Us</h2>
+<div class="grid">
+<div class="card">99.9% uptime</div>
+<div class="card">Cost optimized</div>
+<div class="card">Secure infra</div>
+<div class="card">Scalable systems</div>
+</div>
 </section>
 
 <div class="footer">
-  <h3>Fortinetic Solutions</h3>
-  <p>© 2026 All Rights Reserved</p>
+<p>© 2026 Fortinetic Solutions</p>
 </div>
+
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 80 },
+    "size": { "value": 3 },
+    "move": { "speed": 2 },
+    "line_linked": { "enable": true }
+  }
+});
+</script>
 
 </body>
 </html>
