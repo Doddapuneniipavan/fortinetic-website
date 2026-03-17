@@ -35,7 +35,7 @@ h1{
 }
 
 p{
-  max-width:600px;
+  max-width:700px;
   color:#94a3b8;
 }
 </style>
@@ -45,31 +45,53 @@ p{
 
 <canvas id="bg"></canvas>
 
+<!-- HERO -->
 <section>
   <div>
     <h1>Fortinetic Solutions</h1>
-    <p>Engineering next-gen cloud & DevOps infrastructure</p>
+    <p>Enterprise Cloud & DevOps Solutions</p>
+    <p>We design scalable, secure, and cost-efficient infrastructure for modern businesses.</p>
   </div>
 </section>
 
+<!-- SERVICES -->
 <section>
   <div>
-    <h1>Services</h1>
-    <p>Cloud • DevOps • Monitoring • Security</p>
+    <h1>Our Services</h1>
+    <p><b>DevOps Automation</b> – CI/CD pipelines, Terraform, Ansible</p>
+    <p><b>Cloud Engineering</b> – AWS, Azure, GCP scalable architecture</p>
+    <p><b>Monitoring</b> – Prometheus, Grafana, alerting</p>
+    <p><b>Security</b> – IAM, DevSecOps, network security</p>
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section>
   <div>
-    <h1>Why Us</h1>
-    <p>Scalable, secure, enterprise-grade systems</p>
+    <h1>Projects</h1>
+    <p>Reduced AWS costs by 40% using optimization strategies</p>
+    <p>Built CI/CD pipelines for production applications</p>
+    <p>Migrated legacy systems to cloud-native infrastructure</p>
   </div>
 </section>
 
+<!-- WHY US -->
 <section>
   <div>
-    <h1>Contact</h1>
-    <p>info@fortineticsolutions.in</p>
+    <h1>Why Choose Us</h1>
+    <p>✔ 99.9% uptime architecture</p>
+    <p>✔ Cost-optimized infrastructure</p>
+    <p>✔ Security-first design</p>
+    <p>✔ Scalable systems for growth</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section>
+  <div>
+    <h1>Contact Us</h1>
+    <p>Email: info@fortineticsolutions.in</p>
+    <p>Location: Hyderabad, India</p>
   </div>
 </section>
 
@@ -101,7 +123,7 @@ light2.position.set(-20,-20,20);
 
 scene.add(light1, light2);
 
-// OBJECT 1 (TORUS)
+// OBJECTS
 const torusGeo = new THREE.TorusKnotGeometry(10,3,100,16);
 const torusMat = new THREE.MeshStandardMaterial({
   color:0x3b82f6,
@@ -110,7 +132,6 @@ const torusMat = new THREE.MeshStandardMaterial({
 const torus = new THREE.Mesh(torusGeo, torusMat);
 scene.add(torus);
 
-// OBJECT 2 (SPHERE)
 const sphereGeo = new THREE.SphereGeometry(5,32,32);
 const sphereMat = new THREE.MeshStandardMaterial({
   color:0x22c55e,
@@ -120,7 +141,6 @@ const sphere = new THREE.Mesh(sphereGeo, sphereMat);
 sphere.position.x = 20;
 scene.add(sphere);
 
-// OBJECT 3 (BOX)
 const boxGeo = new THREE.BoxGeometry(6,6,6);
 const boxMat = new THREE.MeshStandardMaterial({
   color:0xffffff,
