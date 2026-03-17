@@ -1,55 +1,188 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Fortinetic Solutions</title>
-<style>
-body {
-  font-family: Arial;
-  background: #0f172a;
-  color: white;
-  margin: 0;
-}
-section {
-  padding: 40px;
-  text-align: center;
-}
-h1, h2 {
-  color: #3b82f6;
-}
-button {
-  padding: 10px 20px;
-  margin: 10px;
-  border: none;
-  background: #3b82f6;
-  color: white;
-  cursor: pointer;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fortinetic Solutions | Cloud & DevOps</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #0b1120;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 80px;
+      background: rgba(0,0,0,0.4);
+    }
+
+    header h2 {
+      color: #3b82f6;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #3b82f6;
+    }
+
+    .hero p {
+      margin: 20px 0;
+      font-size: 1.2rem;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      margin: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .primary {
+      background: #3b82f6;
+      color: #fff;
+    }
+
+    .secondary {
+      background: transparent;
+      border: 1px solid #3b82f6;
+      color: #3b82f6;
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 40px;
+    }
+
+    .card {
+      background: #111827;
+      padding: 30px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .why, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 40px;
+    }
+
+    .footer {
+      background: #020617;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .footer p {
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 
 <body>
 
-<section>
-<h1>Engineering Scalable Cloud & DevOps Solutions</h1>
-<p>Fortinetic Solutions helps businesses build secure and scalable infrastructure.</p>
+<header>
+  <h2>Fortinetic</h2>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Engineering Scalable Cloud & DevOps Solutions</h1>
+  <p>We help businesses build secure, scalable, and high-performance infrastructure.</p>
+  <button class="btn primary">Get Started</button>
+  <button class="btn secondary">Book Consultation</button>
 </section>
 
 <section>
-<h2>Our Services</h2>
-<p>DevOps | Cloud Infrastructure | CI/CD | Monitoring | IT Consulting</p>
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <h3>DevOps Automation</h3>
+      <p>CI/CD pipelines, automation workflows, and deployment strategies.</p>
+    </div>
+    <div class="card">
+      <h3>Cloud Infrastructure</h3>
+      <p>Design and deploy scalable AWS, Azure, and GCP solutions.</p>
+    </div>
+    <div class="card">
+      <h3>Monitoring</h3>
+      <p>Prometheus, Grafana, and observability tools for system health.</p>
+    </div>
+    <div class="card">
+      <h3>Security</h3>
+      <p>Secure cloud architecture and compliance-driven solutions.</p>
+    </div>
+  </div>
 </section>
 
 <section>
-<h2>About Us</h2>
-<p>Hyderabad-based company delivering modern cloud and DevOps services.</p>
+  <h2>Why Choose Us</h2>
+  <div class="why">
+    <div class="card">99.9% Uptime Solutions</div>
+    <div class="card">Cost Optimized Infrastructure</div>
+    <div class="card">Security First Approach</div>
+    <div class="card">Scalable Architecture</div>
+  </div>
 </section>
 
 <section>
-<h2>Contact</h2>
-<p>📍 Hyderabad</p>
-<p>📞 +91 YOUR NUMBER</p>
-<p>📧 info@fortineticsolutions.in</p>
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="card">Reduced AWS cost by 40% for a fintech client</div>
+    <div class="card">Implemented CI/CD for high traffic application</div>
+    <div class="card">Migrated legacy systems to cloud-native architecture</div>
+  </div>
 </section>
+
+<section>
+  <h2>Contact Us</h2>
+  <p>Email: info@fortineticsolutions.in</p>
+  <p>Location: Hyderabad, India</p>
+</section>
+
+<div class="footer">
+  <h3>Fortinetic Solutions</h3>
+  <p>© 2026 All Rights Reserved</p>
+</div>
 
 </body>
 </html>
